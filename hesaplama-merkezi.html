@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hesaplama Merkezi</title>
+<meta name="description" content="Yüzde, indirim ve yaş hesaplama araçları. Hızlı ve ücretsiz hesaplama.">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f8fc;color:#14213d}
+header{background:linear-gradient(135deg,#0878f9,#1456d9);color:white;padding:28px 18px 30px;text-align:center}
+h1{margin:0 0 8px;font-size:30px}header p{margin:0 0 18px;opacity:.92}
+.container{max-width:760px;margin:auto;padding:18px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.card,.calculator{background:white;border-radius:16px;padding:18px;box-shadow:0 4px 18px #17345d12}
+.card{cursor:pointer;border:1px solid #e8eef6}.card h2{font-size:17px;margin:8px 0 0}.icon{font-size:28px}
+.calculator{margin-top:18px}.calculator h2{margin-top:0}
+label{display:block;font-weight:bold;margin:12px 0 6px}input{width:100%;padding:13px;border:1px solid #ccd7e5;border-radius:10px;font-size:16px}
+button{width:100%;margin-top:15px;padding:13px;border:0;border-radius:10px;background:#0878f9;color:white;font-size:16px;font-weight:bold}
+.result{margin-top:15px;padding:15px;border-radius:12px;background:#eafaf3;color:#08734d;font-weight:bold;display:none}
+footer{text-align:center;color:#718096;padding:25px;font-size:13px}
+@media(max-width:520px){.grid{grid-template-columns:1fr 1fr}h1{font-size:27px}}
+</style>
+</head>
+<body>
+<header>
+<h1>Hesaplama Merkezi</h1>
+<p>Pratik hesaplama araçları, tek bir yerde.</p>
+</header>
+
+<main class="container">
+<div class="grid">
+<div class="card" onclick="show('yuzde')"><div class="icon">🔢</div><h2>Yüzde Hesaplama</h2></div>
+<div class="card" onclick="show('indirim')"><div class="icon">🎁</div><h2>İndirim Hesaplama</h2></div>
+<div class="card" onclick="show('yas')"><div class="icon">🎂</div><h2>Yaş Hesaplama</h2></div>
+<div class="card"><div class="icon">➕</div><h2>Yakında daha fazla araç</h2></div>
+</div>
+
+<section id="yuzde" class="calculator">
+<h2>🔢 Yüzde Hesaplama</h2>
+<label>Sayı</label><input id="sayi" type="number" placeholder="Örn: 200">
+<label>Yüzde (%)</label><input id="oran" type="number" placeholder="Örn: 15">
+<button onclick="yuzde()">Hesapla</button>
+<div id="yr" class="result"></div>
+</section>
+
+<section id="indirim" class="calculator">
+<h2>🎁 İndirim Hesaplama</h2>
+<label>Ürün fiyatı (TL)</label><input id="fiyat" type="number" placeholder="Örn: 1000">
+<label>İndirim oranı (%)</label><input id="ind" type="number" placeholder="Örn: 20">
+<button onclick="indirim()">Hesapla</button>
+<div id="ir" class="result"></div>
+</section>
+
+<section id="yas" class="calculator">
+<h2>🎂 Yaş Hesaplama</h2>
+<label>Doğum tarihi</label><input id="dogum" type="date">
+<button onclick="yas()">Hesapla</button>
+<div id="ar" class="result"></div>
+</section>
+</main>
+
+<footer>Hesaplama Merkezi • Ücretsiz hesaplama araçları</footer>
+
+<script>
+function yuzde(){let s=+sayi.value,o=+oran.value;if(!s||!o){yr.innerText="Lütfen iki alanı da doldur.";yr.style.display="block";return}yr.innerText=s+" sayısının %"+o+"’si = "+(s*o/100);yr.style.display="block"}
+function indirim(){let f=+fiyat.value,i=+ind.value;if(!f||!i){ir.innerText="Lütfen iki alanı da doldur.";ir.style.display="block";return}let d=f*i/100;ir.innerHTML="İndirim: "+d.toFixed(2)+" TL<br>Yeni fiyat: "+(f-d).toFixed(2)+" TL";ir.style.display="block"}
+function yas(){let d=new Date(dogum.value),n=new Date();if(isNaN(d)){ar.innerText="Lütfen doğum tarihinizi seçin.";ar.style.display="block";return}let a=n.getFullYear()-d.getFullYear();let m=n.getMonth()-d.getMonth();if(m<0||(m===0&&n.getDate()<d.getDate()))a--;ar.innerText="Yaşınız: "+a;ar.style.display="block"}
+function show(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
+</script>
+</body>
+</html>
