@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://loosofrain-a11y.github.io/hesaplama-merkezi/sitemap.xml
