@@ -3,169 +3,294 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Hesaplama Merkezi - Ücretsiz Hesaplama Araçları</title>
-<meta name="description" content="Yüzde, indirim, KDV, maaş zammı, faiz, oran ve yaş hesaplama araçları. Hızlı ve ücretsiz.">
+
+<meta name="description" content="Yüzde, indirim, KDV, maaş zammı, faiz, kredi, oran ve yaş hesaplama araçları. Hızlı ve ücretsiz.">
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f8fc;color:#14213d}
-header{background:linear-gradient(135deg,#0878f9,#1456d9);color:white;padding:28px 18px 30px;text-align:center}
-h1{margin:0 0 8px;font-size:30px}
-header p{margin:0 0 18px;opacity:.92}
-.container{max-width:800px;margin:auto;padding:18px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.card,.calculator{background:white;border-radius:16px;padding:18px;box-shadow:0 4px 18px #17345d12}
-.card{cursor:pointer;border:1px solid #e8eef6}
-.card h2{font-size:17px;margin:8px 0 0}
-.icon{font-size:28px}
-.calculator{margin-top:18px}
-.calculator h2{margin-top:0}
-label{display:block;font-weight:bold;margin:12px 0 6px}
-input,select{width:100%;padding:13px;border:1px solid #ccd7e5;border-radius:10px;font-size:16px;background:white}
-button{width:100%;margin-top:15px;padding:13px;border:0;border-radius:10px;background:#0878f9;color:white;font-size:16px;font-weight:bold;cursor:pointer}
-button:hover{opacity:.92}
-.result{margin-top:15px;padding:15px;border-radius:12px;background:#eafaf3;color:#08734d;font-weight:bold;display:none}
-footer{text-align:center;color:#718096;padding:25px;font-size:13px}
-@media(max-width:520px){.grid{grid-template-columns:1fr 1fr}h1{font-size:27px}}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f8fc;
+color:#14213d
+}
+
+header{
+background:linear-gradient(135deg,#0878f9,#1456d9);
+color:white;
+padding:28px 18px 30px;
+text-align:center
+}
+
+h1{
+margin:0 0 8px;
+font-size:30px
+}
+
+header p{
+margin:0 0 18px;
+opacity:.92
+}
+
+.container{
+max-width:800px;
+margin:auto;
+padding:18px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px
+}
+
+.card,.calculator{
+background:white;
+border-radius:16px;
+padding:18px;
+box-shadow:0 4px 18px #17345d12
+}
+
+.card{
+cursor:pointer;
+border:1px solid #e8eef6
+}
+
+.card h2{
+font-size:17px;
+margin:8px 0 0
+}
+
+.icon{
+font-size:28px
+}
+
+.calculator{
+margin-top:18px
+}
+
+.calculator h2{
+margin-top:0
+}
+
+label{
+display:block;
+font-weight:bold;
+margin:12px 0 6px
+}
+
+input,select{
+width:100%;
+padding:13px;
+border:1px solid #ccd7e5;
+border-radius:10px;
+font-size:16px;
+background:white
+}
+
+button{
+width:100%;
+margin-top:15px;
+padding:13px;
+border:0;
+border-radius:10px;
+background:#0878f9;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer
+}
+
+button:hover{
+opacity:.92
+}
+
+.result{
+margin-top:15px;
+padding:15px;
+border-radius:12px;
+background:#eafaf3;
+color:#08734d;
+font-weight:bold;
+display:none
+}
+
+footer{
+text-align:center;
+color:#718096;
+padding:25px;
+font-size:13px
+}
+
+footer a{
+color:#0878f9;
+text-decoration:none
+}
+
+footer a:hover{
+text-decoration:underline
+}
+
+@media(max-width:520px){
+.grid{
+grid-template-columns:1fr 1fr
+}
+
+h1{
+font-size:27px
+}
+}
 </style>
 </head>
+
 <body>
+
 <header>
 <h1>Hesaplama Merkezi</h1>
 <p>Pratik hesaplama araçları, tek bir yerde.</p>
 </header>
 
 <main class="container">
+
 <div class="grid">
-<div class="card" onclick="show('yuzde')"><div class="icon">🔢</div><h2>Yüzde Hesaplama</h2></div>
-<div class="card" onclick="show('indirim')"><div class="icon">🎁</div><h2>İndirim Hesaplama</h2></div>
-<div class="card" onclick="show('kdv')"><div class="icon">🧾</div><h2>KDV Hesaplama</h2></div>
-<div class="card" onclick="show('zam')"><div class="icon">💰</div><h2>Maaş Zam Hesaplama</h2></div>
-<div class="card" onclick="show('faiz')"><div class="icon">🏦</div><h2>Faiz Hesaplama</h2></div>
-<div class="card" onclick="show('oran')"><div class="icon">📊</div><h2>Oran Hesaplama</h2></div>
-<div class="card" onclick="show('yas')"><div class="icon">🎂</div><h2>Yaş Hesaplama</h2></div>
+
+<div class="card" onclick="show('yuzde')">
+<div class="icon">🔢</div>
+<h2>Yüzde Hesaplama</h2>
 </div>
 
+<div class="card" onclick="show('indirim')">
+<div class="icon">🎁</div>
+<h2>İndirim Hesaplama</h2>
+</div>
+
+<div class="card" onclick="show('kdv')">
+<div class="icon">🧾</div>
+<h2>KDV Hesaplama</h2>
+</div>
+
+<div class="card" onclick="show('zam')">
+<div class="icon">💰</div>
+<h2>Maaş Zam Hesaplama</h2>
+</div>
+
+<div class="card" onclick="show('faiz')">
+<div class="icon">🏦</div>
+<h2>Faiz Hesaplama</h2>
+</div>
+
+<div class="card" onclick="show('kredi')">
+<div class="icon">💳</div>
+<h2>Kredi Taksit Hesaplama</h2>
+</div>
+
+<div class="card" onclick="show('oran')">
+<div class="icon">📊</div>
+<h2>Oran Hesaplama</h2>
+</div>
+
+<div class="card" onclick="show('yas')">
+<div class="icon">🎂</div>
+<h2>Yaş Hesaplama</h2>
+</div>
+
+</div>
+
+
 <section id="yuzde" class="calculator">
+
 <h2>🔢 Yüzde Hesaplama</h2>
-<label>Sayı</label><input id="sayi" type="number" placeholder="Örn: 200">
-<label>Yüzde (%)</label><input id="oranYuzde" type="number" placeholder="Örn: 15">
+
+<label>Sayı</label>
+<input id="sayi" type="number" placeholder="Örn: 200">
+
+<label>Yüzde (%)</label>
+<input id="oranYuzde" type="number" placeholder="Örn: 15">
+
 <button onclick="yuzde()">Hesapla</button>
+
 <div id="yr" class="result"></div>
+
 </section>
+
 
 <section id="indirim" class="calculator">
+
 <h2>🎁 İndirim Hesaplama</h2>
-<label>Ürün fiyatı (TL)</label><input id="fiyat" type="number" placeholder="Örn: 1000">
-<label>İndirim oranı (%)</label><input id="ind" type="number" placeholder="Örn: 20">
+
+<label>Ürün fiyatı (TL)</label>
+<input id="fiyat" type="number" placeholder="Örn: 1000">
+
+<label>İndirim oranı (%)</label>
+<input id="ind" type="number" placeholder="Örn: 20">
+
 <button onclick="indirim()">Hesapla</button>
+
 <div id="ir" class="result"></div>
+
 </section>
+
 
 <section id="kdv" class="calculator">
+
 <h2>🧾 KDV Hesaplama</h2>
-<label>Tutar (TL)</label><input id="kdvTutar" type="number" placeholder="Örn: 1000">
-<label>KDV oranı (%)</label><input id="kdvOran" type="number" value="20">
+
+<label>Tutar (TL)</label>
+<input id="kdvTutar" type="number" placeholder="Örn: 1000">
+
+<label>KDV oranı (%)</label>
+<input id="kdvOran" type="number" value="20">
+
 <button onclick="kdv()">Hesapla</button>
+
 <div id="kr" class="result"></div>
+
 </section>
+
 
 <section id="zam" class="calculator">
+
 <h2>💰 Maaş Zam Hesaplama</h2>
-<label>Mevcut maaş (TL)</label><input id="maas" type="number" placeholder="Örn: 30000">
-<label>Zam oranı (%)</label><input id="zamOran" type="number" placeholder="Örn: 25">
+
+<label>Mevcut maaş (TL)</label>
+<input id="maas" type="number" placeholder="Örn: 30000">
+
+<label>Zam oranı (%)</label>
+<input id="zamOran" type="number" placeholder="Örn: 25">
+
 <button onclick="zam()">Hesapla</button>
+
 <div id="zr" class="result"></div>
+
 </section>
+
 
 <section id="faiz" class="calculator">
+
 <h2>🏦 Basit Faiz Hesaplama</h2>
-<label>Ana para (TL)</label><input id="anaPara" type="number" placeholder="Örn: 10000">
-<label>Yıllık faiz oranı (%)</label><input id="faizOran" type="number" placeholder="Örn: 30">
-<label>Vade (ay)</label><input id="vade" type="number" placeholder="Örn: 12">
+
+<label>Ana para (TL)</label>
+<input id="anaPara" type="number" placeholder="Örn: 10000">
+
+<label>Yıllık faiz oranı (%)</label>
+<input id="faizOran" type="number" placeholder="Örn: 30">
+
+<label>Vade (ay)</label>
+<input id="vade" type="number" placeholder="Örn: 12">
+
 <button onclick="faiz()">Hesapla</button>
+
 <div id="fr" class="result"></div>
+
 </section>
 
-<section id="oran" class="calculator">
-<h2>📊 Oran Hesaplama</h2>
-<label>Birinci değer</label><input id="oranA" type="number" placeholder="Örn: 25">
-<label>İkinci değer</label><input id="oranB" type="number" placeholder="Örn: 100">
-<button onclick="oran()">Hesapla</button>
-<div id="or" class="result"></div>
-</section>
 
-<section id="yas" class="calculator">
-<h2>🎂 Yaş Hesaplama</h2>
-<label>Doğum tarihi</label><input id="dogum" type="date">
-<button onclick="yas()">Hesapla</button>
-<div id="ar" class="result"></div>
-</section>
-</main>
+<section id="kredi" class="calculator">
 
+<h2>💳 Kredi Taksit Hesaplama</h2>
 
-<footer>
-  Hesaplama Merkezi — Ücretsiz ve pratik hesaplama araçları.
-  <br>
-  <a href="gizlilik.html">Gizlilik Politikası</a>
-  |
-  <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
-</footer>
-
-<script>
-function show(id){
-  document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
-}
-function num(id){return parseFloat(document.getElementById(id).value)}
-function result(id,text){
-  const el=document.getElementById(id); el.innerHTML=text; el.style.display='block';
-}
-function money(n){return n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2})}
-
-function yuzde(){
-  const a=num('sayi'),b=num('oranYuzde');
-  if(isNaN(a)||isNaN(b)) return result('yr','Lütfen tüm alanları doldurun.');
-  result('yr',`${money(a)} sayısının %${money(b)} değeri: <strong>${money(a*b/100)} TL</strong>`);
-}
-function indirim(){
-  const f=num('fiyat'),i=num('ind');
-  if(isNaN(f)||isNaN(i)) return result('ir','Lütfen tüm alanları doldurun.');
-  const ind=f*i/100;
-  result('ir',`İndirim: <strong>${money(ind)} TL</strong><br>İndirimli fiyat: <strong>${money(f-ind)} TL</strong>`);
-}
-function kdv(){
-  const t=num('kdvTutar'),o=num('kdvOran');
-  if(isNaN(t)||isNaN(o)) return result('kr','Lütfen tüm alanları doldurun.');
-  const vergi=t*o/100;
-  result('kr',`KDV: <strong>${money(vergi)} TL</strong><br>KDV dahil toplam: <strong>${money(t+vergi)} TL</strong>`);
-}
-function zam(){
-  const m=num('maas'),z=num('zamOran');
-  if(isNaN(m)||isNaN(z)) return result('zr','Lütfen tüm alanları doldurun.');
-  const art=m*z/100;
-  result('zr',`Zam miktarı: <strong>${money(art)} TL</strong><br>Yeni maaş: <strong>${money(m+art)} TL</strong>`);
-}
-function faiz(){
-  const p=num('anaPara'),r=num('faizOran'),ay=num('vade');
-  if(isNaN(p)||isNaN(r)||isNaN(ay)) return result('fr','Lütfen tüm alanları doldurun.');
-  const faizTutari=p*(r/100)*(ay/12);
-  result('fr',`Faiz getirisi: <strong>${money(faizTutari)} TL</strong><br>Toplam: <strong>${money(p+faizTutari)} TL</strong>`);
-}
-function oran(){
-  const a=num('oranA'),b=num('oranB');
-  if(isNaN(a)||isNaN(b)||b===0) return result('or','Lütfen geçerli değerler girin.');
-  result('or',`<strong>${money(a)}</strong>, <strong>${money(b)}</strong> değerinin <strong>%${money(a/b*100)}</strong> kadarıdır.`);
-}
-function yas(){
-  const d=document.getElementById('dogum').value;
-  if(!d) return result('ar','Lütfen doğum tarihinizi seçin.');
-  const birth=new Date(d+'T00:00:00'), now=new Date();
-  let age=now.getFullYear()-birth.getFullYear();
-  const beforeBirthday=(now.getMonth()<birth.getMonth())||(now.getMonth()===birth.getMonth()&&now.getDate()<birth.getDate());
-  if(beforeBirthday) age--;
-  if(age<0) return result('ar','Lütfen geçerli bir tarih girin.');
-  result('ar',`Yaşınız: <strong>${age}</strong>`);
-}
-</script>
-</body>
-  </html>
-  
+<label>Kredi tutarı (TL)</label>
+<input id="krediTutar" type="number" placeholder="Örn: 
