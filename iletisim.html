@@ -3,56 +3,105 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>İletişim - Hesaplama Merkezi</title>
+
 <meta name="description" content="Hesaplama Merkezi ile iletişime geçin. Öneri, hata bildirimi ve geri bildirimlerinizi iletebilirsiniz.">
 
 <style>
-*{box-sizing:border-box}
+*{
+box-sizing:border-box
+}
 
 body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f5f8fc;
-  color:#14213d;
+margin:0;
+font-family:Arial,sans-serif;
+background:#f5f8fc;
+color:#14213d
 }
 
 header{
-  background:linear-gradient(135deg,#0878f9,#1456d9);
-  color:white;
-  padding:28px 18px;
-  text-align:center;
+background:linear-gradient(135deg,#0878f9,#1456d9);
+color:white;
+padding:28px 18px;
+text-align:center
 }
 
 h1{
-  margin:0 0 8px;
+margin:0 0 8px;
+font-size:30px
+}
+
+header p{
+margin:0;
+opacity:.92
 }
 
 .container{
-  max-width:700px;
-  margin:auto;
-  padding:20px;
+max-width:700px;
+margin:auto;
+padding:20px
 }
 
 .card{
-  background:white;
-  border-radius:16px;
-  padding:22px;
-  box-shadow:0 4px 18px #17345d12;
+background:white;
+border-radius:16px;
+padding:22px;
+box-shadow:0 4px 18px #17345d12
+}
+
+.card h2{
+margin-top:0
 }
 
 p{
-  line-height:1.7;
+line-height:1.7
 }
 
-a{
-  color:#0878f9;
+.email{
+display:inline-block;
+margin-top:5px;
+font-weight:bold;
+color:#0878f9;
+text-decoration:none
+}
+
+.email:hover{
+text-decoration:underline
+}
+
+.home{
+display:inline-block;
+margin-top:10px;
+color:#0878f9;
+text-decoration:none;
+font-weight:bold
+}
+
+.home:hover{
+text-decoration:underline
 }
 
 footer{
-  text-align:center;
-  color:#718096;
-  padding:25px;
-  font-size:13px;
+text-align:center;
+color:#718096;
+padding:25px;
+font-size:13px
+}
+
+footer a{
+color:#0878f9;
+text-decoration:none
+}
+
+footer a:hover{
+text-decoration:underline
+}
+
+@media(max-width:520px){
+h1{
+font-size:27px
+}
 }
 </style>
 </head>
@@ -65,6 +114,7 @@ footer{
 </header>
 
 <main class="container">
+
 <div class="card">
 
 <h2>Bizimle İletişime Geçin</h2>
@@ -75,7 +125,11 @@ ve karşılaştığınız hataları bizimle paylaşabilirsiniz.
 </p>
 
 <p>
-E-posta: <strong>loosofrain@gmail.com</strong>
+E-posta adresimiz:
+<br>
+<a class="email" href="mailto:loosofrain@gmail.com">
+loosofrain@gmail.com
+</a>
 </p>
 
 <p>
@@ -83,18 +137,27 @@ Gönderdiğiniz mesajlar yalnızca iletişim ve geri bildirim amacıyla değerle
 </p>
 
 <p>
-<a href="index.html">← Ana Sayfaya Dön</a>
+<a class="home" href="index.html">
+← Ana Sayfaya Dön
+</a>
 </p>
 
 </div>
+
 </main>
 
 <footer>
+
 Hesaplama Merkezi — Ücretsiz ve pratik hesaplama araçları.
+
 <br>
+
 <a href="gizlilik.html">Gizlilik Politikası</a>
 |
 <a href="kullanim-kosullari.html">Kullanım Koşulları</a>
+|
+<a href="iletisim.html">İletişim</a>
+
 </footer>
 
 </body>
